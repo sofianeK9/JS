@@ -1,0 +1,61 @@
+.div {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+
+#tableau {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#tableau th,
+#tableau td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#tableau th {
+    background-color: #c2baba;
+}
+
+
+#button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+#button:hover {
+    background-color: #94b1cf ;
+    color: black;
+}
+
+#paragraphe {
+    color: #666;
+}
+
+
+input {
+    border: 1px solid #ddd;
+    padding: 5px;
+    width: 60px;
+    text-align: center;
+}
+
+#reset {
+    background-color: #007bff;
+    color: #ffff;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+#reset:hover {
+    background-color: #94b1cf;
+    color: black;
+}
