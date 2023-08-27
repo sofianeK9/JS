@@ -1,22 +1,19 @@
-// Initianilastion des variables en tete afin qu'elle est une portée globale
+// Initianilastion des variables en tete afin d'avoir une portée globale
 const nextInput = document.querySelectorAll("input");
 const input = document.getElementById("child1");
 const boutton = document.getElementById("button");
 const paragraphe = document.getElementById("paragraphe");
 const reset = document.getElementById("reset");
+const btn = document.getElementById("btn");
 
 // Fonction au nom de BouttonToggle qui permet de switcher de "Mode de base" à "Mode couleur" et "Mode note"
 function BouttonToggle() {
-  // Je récupére les id et je les stocke dans des variables
-  const boutton = document.getElementById("button");
-  const champTexte = document.querySelectorAll("input");
-  const paragraphe = document.getElementById("paragraphe");
   //  j'utilise une condition : si le boutton à comme contenu choisir un mode, je change son texte en "Mode couleur" ainsi que le texte en dessous
   if (boutton.innerHTML === "Choisir un mode") {
     boutton.innerHTML = "Mode couleur";
     paragraphe.textContent = "Mode de notation par couleur";
     // Et j'uilise une boucle ForEach pour retirer l'attribut qui cacher les champs de texte et leur applique un fond vert
-    champTexte.forEach((champ) => {
+    nextInput.forEach((champ) => {
       champ.removeAttribute("hidden");
       champ.style.backgroundColor = "green";
     });
@@ -25,7 +22,7 @@ function BouttonToggle() {
   } else if (boutton.innerHTML === "Mode couleur") {
     boutton.innerHTML = "Mode note";
     paragraphe.textContent = "Mode de notation par note";
-    champTexte.forEach((champ) => {
+    nextInput.forEach((champ) => {
       champ.style.backgroundColor = "";
     });
     // Enfin, dans ma derniére condition, je vais revenir mon boutton en "Mode couleur" afin de switcher entre "Mode note" et "Mode couleur" avec le fond de couleur adapté au mode choisit.
@@ -33,7 +30,7 @@ function BouttonToggle() {
     boutton.innerHTML = "Mode couleur";
     paragraphe.textContent = "Mode de notation par couleur";
 
-    champTexte.forEach((champ) => {
+    nextInput.forEach((champ) => {
       champ.removeAttribute("hidden");
       champ.style.backgroundColor = "green";
     });
@@ -118,10 +115,30 @@ reset.addEventListener("click", () => {
     nextInput.forEach((element) => {
       element.value = "";
     });
+    alert("Tableau mis à jour !");
   } else if (boutton.innerHTML === "Mode couleur" && input.value === "") {
     nextInput.forEach((element) => {
       element.value = "";
       element.style.backgroundColor = "green";
+    });
+    alert("Tableau mis à jour !");
+  }
+});
+
+// Boutton pour revenir au "Mode de base"
+
+btn.addEventListener("click", () => {
+  if (boutton.innerHTML === "Mode couleur") {
+    boutton.innerHTML = "Choisir un mode";
+    paragraphe.textContent = "Mode de base";
+    nextInput.forEach((input) => {
+      input.setAttribute("hidden", "");
+    });
+  } else if (boutton.innerHTML === "Mode note") {
+    boutton.innerHTML = "Choisir un mode";
+    paragraphe.textContent = "Mode de base";
+    nextInput.forEach((input) => {
+      input.setAttribute("hidden", "");
     });
   }
 });

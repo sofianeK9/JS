@@ -20,7 +20,8 @@
 }
 
 
-#button {
+#button,
+#btn {
     background-color: #007bff;
     color: #fff;
     border: none;
@@ -29,8 +30,9 @@
     border-radius: 15px;
 }
 
-#button:hover {
-    background-color: #94b1cf ;
+#button:hover,
+#btn:hover {
+    background-color: #94b1cf;
     color: black;
 }
 
