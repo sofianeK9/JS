@@ -189,3 +189,29 @@ table.addEventListener("submit", (e) => {
 
 
 
+
+
+function BouttonToggle() {
+  if (boutton.innerHTML === "Choisir un mode") {
+    boutton.innerHTML = "Mode couleur";
+    paragraphe.textContent = "Mode de notation par couleur";
+    nextInput.forEach((champ) => {
+      champ.removeAttribute("hidden");
+      champ.style.backgroundColor = "green";
+    });
+  } else if (boutton.innerHTML === "Mode couleur") {
+    boutton.innerHTML = "Mode note";
+    paragraphe.textContent = "Mode de notation par note";
+    nextInput.forEach((champ) => {
+      champ.style.backgroundColor = "";
+    });
+  } else {
+    boutton.innerHTML = "Mode couleur";
+    paragraphe.textContent = "Mode de notation par couleur";
+
+    nextInput.forEach((champ) => {
+      champ.removeAttribute("hidden");
+      champ.style.backgroundColor = "green";
+    });
+  }
+}

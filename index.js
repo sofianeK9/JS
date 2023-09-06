@@ -12,6 +12,7 @@ function BouttonToggle() {
   if (boutton.innerHTML === "Choisir un mode") {
     boutton.innerHTML = "Mode couleur";
     paragraphe.textContent = "Mode de notation par couleur";
+    boutton.style.backgroundColor = "green";
     // Et j'uilise une boucle ForEach pour retirer l'attribut qui cacher les champs de texte et leur applique un fond vert
     nextInput.forEach((champ) => {
       champ.removeAttribute("hidden");
@@ -22,6 +23,7 @@ function BouttonToggle() {
   } else if (boutton.innerHTML === "Mode couleur") {
     boutton.innerHTML = "Mode note";
     paragraphe.textContent = "Mode de notation par note";
+    boutton.style.backgroundColor = "";
     nextInput.forEach((champ) => {
       champ.style.backgroundColor = "";
     });
@@ -33,6 +35,7 @@ function BouttonToggle() {
     nextInput.forEach((champ) => {
       champ.removeAttribute("hidden");
       champ.style.backgroundColor = "green";
+      boutton.style.backgroundColor = "green";
     });
   }
 }
