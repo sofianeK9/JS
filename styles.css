@@ -1,3 +1,31 @@
+body {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 30s ease infinite;
+    height: 100dvh;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: black;
+    /* text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black; */
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+
 .div {
     width: 50%;
     margin: auto;
@@ -13,17 +41,22 @@
 #tableau td {
     border: 1px solid #ddd;
     padding: 8px;
+    color: black;
 }
 
 #tableau th {
-    background-color: #c2baba;
+    background-color: rgb(125, 162, 180);
+}
+
+h1 {
+    color : black;
 }
 
 
 #button,
 #btn {
     background-color: #007bff;
-    color: #fff;
+    color: black;
     border: none;
     padding: 8px 16px;
     cursor: pointer;
@@ -50,7 +83,7 @@ input {
 
 #reset {
     background-color: #007bff;
-    color: #ffff;
+    color: black;
     border: none;
     padding: 8px 16px;
     cursor: pointer;
