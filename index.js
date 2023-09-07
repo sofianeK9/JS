@@ -1,4 +1,4 @@
-// Initianilastion des variables en tete afin d'avoir une portée globale
+// Initianilastion des variables en tete afin qu'elles aient une portée globale
 const nextInput = document.querySelectorAll("input");
 const input = document.getElementById("child1");
 const boutton = document.getElementById("button");
