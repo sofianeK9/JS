@@ -6,32 +6,48 @@ const paragraphe = document.getElementById("paragraphe");
 const reset = document.getElementById("reset");
 const btn = document.getElementById("btn");
 
-// Fonction au nom de BouttonToggle qui permet de switcher de "Mode de base" à "Mode couleur" et "Mode note"
 function BouttonToggle() {
-  //  j'utilise une condition : si le boutton à comme contenu choisir un mode, je change son texte en "Mode couleur" ainsi que le texte en dessous
+  // Vérifie le contenu actuel du bouton
   if (boutton.innerHTML === "Choisir un mode") {
+    // Si le bouton contient "Choisir un mode", alors :
+    // - Change le texte du bouton en "Mode couleur"
     boutton.innerHTML = "Mode couleur";
+    // - Modifie le texte du paragraphe en dessous du bouton en "Mode de notation par couleur"
     paragraphe.textContent = "Mode de notation par couleur";
+    // - Définit la couleur de fond du bouton en vert
     boutton.style.backgroundColor = "green";
-    // Et j'uilise une boucle ForEach pour retirer l'attribut qui cacher les champs de texte et leur applique un fond vert
+
+    // Utilise une boucle forEach pour itérer sur un ensemble d'éléments HTML appelé "nextInput"
+    // - Supprime l'attribut "hidden" de chaque élément, les rendant visibles
+    // - Définit la couleur de fond de chaque élément en vert
     nextInput.forEach((champ) => {
       champ.removeAttribute("hidden");
       champ.style.backgroundColor = "green";
     });
-    //  J'emet une autre condition : si le boutton à comme contenu Mode couleur, alors je le switch avec comme contenu "Mode note" et je modifie son paragraphe en dessous
-    // Et je retire le fond de couleur vert pour revenir à un fond de base.
   } else if (boutton.innerHTML === "Mode couleur") {
+    // Si le bouton contient "Mode couleur", alors :
+    // - Change le texte du bouton en "Mode note"
     boutton.innerHTML = "Mode note";
+    // - Modifie le texte du paragraphe en dessous du bouton en "Mode de notation par note"
     paragraphe.textContent = "Mode de notation par note";
+    // - Supprime la couleur de fond du bouton, revenant ainsi à la couleur par défaut
     boutton.style.backgroundColor = "";
+
+    // Utilise une boucle forEach pour itérer sur l'ensemble d'éléments "nextInput" encore une fois
+    // - Supprime la couleur de fond de chaque élément, revenant ainsi à la couleur par défaut
     nextInput.forEach((champ) => {
       champ.style.backgroundColor = "";
     });
-    // Enfin, dans ma derniére condition, je vais revenir mon boutton en "Mode couleur" afin de switcher entre "Mode note" et "Mode couleur" avec le fond de couleur adapté au mode choisit.
   } else {
+    // Si aucune des conditions précédentes n'est satisfaite, cela signifie que le bouton contient "Mode note"
+    // Dans ce cas :
+    // - Change le texte du bouton en "Mode couleur"
     boutton.innerHTML = "Mode couleur";
-    paragraphe.textContent = "Mode de notation par couleur";
+    // - Modifie le texte du paragraphe en dessous du bouton en "Mode de notation par couleur"
 
+    // Utilise une boucle forEach pour itérer sur l'ensemble d'éléments "nextInput"
+    // - Supprime l'attribut "hidden" de chaque élément, les rendant visibles
+    // - Définit la couleur de fond du bouton en vert
     nextInput.forEach((champ) => {
       champ.removeAttribute("hidden");
       champ.style.backgroundColor = "green";
@@ -39,6 +55,7 @@ function BouttonToggle() {
     });
   }
 }
+
 
 // Focus suivant, application des couleurs et masquage du contenu input pour le monde note
 
